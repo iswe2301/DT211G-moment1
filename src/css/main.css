@@ -1,0 +1,116 @@
+/* Tar bort all margin och padding samt sätter box-sizing */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Sätter storlek på typsnitt i roten */
+html {
+    font-size: 62.5%;
+    height: 100%;
+}
+
+/* Typsnitt, storlek och bakgrundfärg för allt inom bodyn */
+body {
+    font-size: 1.6rem;
+    line-height: 2.8rem;
+    font-family: 'Roboto', Helvetica, Arial, sans-serif;
+    font-weight: 400;
+    background-color: #d2e4db;
+    color: #333;
+    height: 100%;
+}
+
+/* Styling för rubriker */
+h1 {
+    font-size: 3rem;
+    font-family: "Montserrat", 'Roboto', Helvetica, sans-serif;
+    color: black;
+    font-weight: 700;
+    text-align: center;
+    margin: 4rem 0 0 0;
+    letter-spacing: 0.5rem;
+    line-height: 4rem;
+}
+
+h2 {
+    font-size: 2.6rem;
+    font-family: "Montserrat", 'Roboto', Helvetica, sans-serif;
+    color: rgb(3, 29, 1);
+    font-weight: 600;
+    letter-spacing: 0.2rem;
+    text-align: center;
+    margin: 4rem 0 0 0;
+    line-height: 3.6rem;
+}
+
+h3 {
+    font-size: 2.4rem;
+    font-family: "Montserrat", 'Roboto', Helvetica, sans-serif;
+    color: black;
+    font-weight: 600;
+    letter-spacing: 0.2rem;
+    margin: 4rem 0 0 0;
+    line-height: 3.4rem;
+}
+
+h4 {
+    font-size: 2rem;
+    font-family: "Montserrat", 'Roboto', Helvetica, sans-serif;
+    color: black;
+    font-weight: 600;
+    letter-spacing: 0.2rem;
+    margin: 4rem 0 0 0;
+    line-height: 3rem;
+}
+
+/* Styling och position för header */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5rem;
+    display: flex;
+    justify-content: space-evenly;
+    background-color: #add8c2;
+}
+
+/* Tar bort marginal för huvudrubrik i header */
+header h1 {
+    margin: 0;
+}
+
+/* Styling och position för nav */
+nav {
+    position: fixed;
+    top: 5rem;
+    left: 0;
+    width: 100%;
+    height: 5rem;
+    display: flex;
+    justify-content: center;
+    background-color: rgb(7, 37, 7);
+}
+
+/* Styling för navigeringslista */
+nav ul {
+    display: flex;
+}
+
+nav li {
+    list-style-type: none;
+    padding: 0 2rem;
+    margin: 0 5rem;
+}
+
+nav li a {
+    color: white;
+    text-decoration: none;
+}
+
+/* Styling för main-container */
+main {
+    margin: 10rem 0 0 0;
+}
