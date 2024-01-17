@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="sv">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Roboto:wght@400;700&display=swap">
+    <script src="js/main.js" type="module"></script>
+    <title>Start - Moment 1</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="icon" type="image/png" href="favicon.png">
+</head>
+
+<body>
+    <div></div>
+    <header>
+        <div id="logo">
+            <a href="index.html">
+                <img src="images/logo.svg" alt="Logotyp">
+            </a>
+            <h1>ISA WESTLING</h1>
+        </div>
+        <nav id="computernav">
+            <ul>
+                <li><a href="index.html">START</a></li>
+                <li><a href="images.html">BILDER</a></li>
+                <li><a class="active" href="process.html">ARBETSPROCESS</a></li>
+            </ul>
+        </nav>
+        <!-- Hamburgermeny för mobil -->
+        <button class="menubtn" aria-label="Huvudmeny">
+            <span class="menuicon">
+                <span id="line1"></span>
+                <span id="line2"></span>
+                <span id="line3"></span>
+            </span>
+        </button>
+    </header>
+
+    <nav id="mobilenav">
+        <ul>
+            <li><a href="index.html">START</a></li>
+            <li><a href="images.html">BILDER</a></li>
+            <li><a class="active" href="process.html">ARBETSPROCESS</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <section>
+            <h2>ARBETSPROCESS</h2>
+            <h3>Uppstart</h3>
+            <p>Projektet började med att jag skapade en mapp för själva projektet. Jag öppnade terminalen och initierade
+                ett nytt NPM-projekt genom att ange kommandot npm init.</p>
+            <p>Jag öppnade sedan mappen i VSC och tog bort main samt script i package.json-filen. I VSC's terminal
+                installerade parcelpaketet som ett utvecklingsberoende genom att skriva in kommandot npm install parcel
+                --save-dev.</p>
+            <p>I package.json-filen lade jag till source för att välja vilken fil som projektet ska starta på, vilket
+                sattes till src/index.html.
+                Jag lade även till scripts som objekt med start och build. Genom kommandot npm run start kan jag köra
+                webbplatsen "live" och se ändringar jag gör samtidigt som jag utvecklar. Genom kommandot npm run build
+                paketeras projektet istället för publicering.</p>
+            <p>Jag skapade src-mappen och lade till alla mina undermappar och filer här. Mapparna består av en mapp för
+                CSS, en för JavaScript samt en för bilder. Direkt i src-mappen finns de tre html-sidorna till
+                webbplatsen och en favicon i ico/png-fomrmat.</p>
+            <p>I html-filernas head lade jag till "type=module" i sökvägen till min script-fil. Detta för att
+                js-optimeringen ska ske korrekt från parcel.</p>
+            <h3>Git-repository</h3>
+            <p>När mitt npm-projekt var färdiguppstartat, körde jag kommandot git init för att skapa ett nytt git
+                repository. Jag skapade även en gitignore-fil där jag valde att lägga in mapparna node_modules, dist
+                samt parcel-cache för att inte versionshantera dessa.</p>
+            <p>Till projektet använde jag två branches, en för utveckling (development) och en för publicering (main).
+                Under utvecklingsfasen gjordes commits till development-grenen. När projektet väl publicerades gjordes
+                istället en merge från development-grenen till main-grenen. Samtliga commits pushades direkt till mitt
+                remote repository på GitHub.</p>
+            <h3>Utveckling</h3>
+            <p>Utvecklingen av projektet har skett genom att jag har kört kommandot npm run start för att kunna se mina
+                ändringar i realtid och även se hur parcel har minfierat och optimerat filer.</p>
+            <p>På bild-sidan har alla bilder lagts in i picture-taggen för att visa dessa beroende på besökarens
+                skärmbredd samt webbläsarens stöd. Bilderna har fått parametrarna "as" och "width", där "as" står för
+                vilket filformat som bilden ska konverteras till och "width" för vilken bredd som bilden ska omskalas
+                till. Exempelvis: "?as=avif&width=800".</p>
+            <h3>Publicering</h3>
+            <p>När projektet var redo för publicering körde jag kommandot npm run build för att paketera och optimera
+                mina filer inför publieringen. Projektet har sedan publiceras via Netlify.</p>
+            <p>På Netlify valde jag att lägga till en ny sida genom att importera ett existerande projekt. Jag valde
+                "deploy with GitHub" och valde mitt git-repository till projektet. I inställningarna valde jag att
+                main-branchen skulle överföras, dvs. min publicerings-branch. Build-kommandot är satt till npm run build
+                vilket stämmer överrens med det kommando jag använder för att göra filerna redo för publicering. Den
+                katalog som används för publicering är dist-katalogen.</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Isa Westling</p>
+        <p>DT211G Frontend-baserad webbutveckling</p>
+        <p>Webbutvecklingsprogrammet, Mittuniversitetet</p>
+    </footer>
+</body>
+
+</html>
