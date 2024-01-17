@@ -125,9 +125,17 @@ main {
     min-height: 100vh;
 }
 
+/* Responsiva bilder med maxbredd */
+img {
+    width: 100%;
+    max-width: 800px;
+    height: auto;
+}
+
 /* Margin för paragrafer i sektioner */
 section p {
-    margin: 1.2rem 0;
+    margin: 1.2rem auto;
+    max-width: 75ch;
 }
 
 /* Styling och position för footer */
@@ -135,6 +143,7 @@ footer {
     width: 100%;
     height: auto;
     padding: 1rem;
+    margin: 5rem 0 0 0;
     background-color: rgb(7, 37, 7);
     color: white;
     text-align: center;
