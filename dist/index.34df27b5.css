@@ -16,7 +16,7 @@ body {
   font-family: Roboto, Helvetica, Arial, sans-serif;
   font-size: 1.6rem;
   font-weight: 400;
-  line-height: 2.8rem;
+  line-height: 2.6rem;
 }
 
 h1 {
@@ -34,7 +34,7 @@ h2 {
   color: #031d01;
   letter-spacing: .2rem;
   text-align: center;
-  margin: 4rem 0 0;
+  margin: 4rem 0 2rem;
   font-family: Montserrat, Roboto, Helvetica, sans-serif;
   font-size: 2.6rem;
   font-weight: 600;
@@ -65,7 +65,8 @@ header {
   background-color: #add8c2;
   justify-content: space-evenly;
   width: 100%;
-  height: 5rem;
+  height: auto;
+  padding: 1rem 0 0;
   display: flex;
   position: fixed;
   top: 0;
@@ -80,10 +81,11 @@ nav {
   background-color: #072507;
   justify-content: center;
   width: 100%;
-  height: 5rem;
+  height: auto;
+  padding: 1rem 0;
   display: flex;
   position: fixed;
-  top: 5rem;
+  top: 6.8rem;
   left: 0;
 }
 
@@ -99,11 +101,32 @@ nav li {
 
 nav li a {
   color: #fff;
+  font-family: Montserrat, Roboto, Helvetica, sans-serif;
   text-decoration: none;
 }
 
+nav a:hover {
+  text-decoration: underline;
+}
+
 main {
-  margin: 10rem 0 0;
+  width: 80%;
+  max-width: 1200px;
+  min-height: 100vh;
+  margin: 155px auto 0;
+}
+
+section p {
+  margin: 1.2rem 0;
+}
+
+footer {
+  color: #fff;
+  text-align: center;
+  background-color: #072507;
+  width: 100%;
+  height: auto;
+  padding: 1rem;
 }
 
 /*# sourceMappingURL=index.34df27b5.css.map */

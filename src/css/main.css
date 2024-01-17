@@ -14,7 +14,7 @@ html {
 /* Typsnitt, storlek och bakgrundfärg för allt inom bodyn */
 body {
     font-size: 1.6rem;
-    line-height: 2.8rem;
+    line-height: 2.6rem;
     font-family: 'Roboto', Helvetica, Arial, sans-serif;
     font-weight: 400;
     background-color: #d2e4db;
@@ -41,7 +41,7 @@ h2 {
     font-weight: 600;
     letter-spacing: 0.2rem;
     text-align: center;
-    margin: 4rem 0 0 0;
+    margin: 4rem 0 2rem 0;
     line-height: 3.6rem;
 }
 
@@ -71,7 +71,8 @@ header {
     top: 0;
     left: 0;
     width: 100%;
-    height: 5rem;
+    height: auto;
+    padding: 1rem 0 0 0;
     display: flex;
     justify-content: space-evenly;
     background-color: #add8c2;
@@ -85,10 +86,11 @@ header h1 {
 /* Styling och position för nav */
 nav {
     position: fixed;
-    top: 5rem;
+    top: 6.8rem;
     left: 0;
     width: 100%;
-    height: 5rem;
+    height: auto;
+    padding: 1rem 0;
     display: flex;
     justify-content: center;
     background-color: rgb(7, 37, 7);
@@ -108,9 +110,32 @@ nav li {
 nav li a {
     color: white;
     text-decoration: none;
+    font-family: "Montserrat", 'Roboto', Helvetica, sans-serif;
+}
+
+nav a:hover {
+text-decoration: underline;
 }
 
 /* Styling för main-container */
 main {
-    margin: 10rem 0 0 0;
+    margin: 155px auto 0 auto;
+    width: 80%;
+    max-width: 1200px;
+    min-height: 100vh;
+}
+
+/* Margin för paragrafer i sektioner */
+section p {
+    margin: 1.2rem 0;
+}
+
+/* Styling och position för footer */
+footer {
+    width: 100%;
+    height: auto;
+    padding: 1rem;
+    background-color: rgb(7, 37, 7);
+    color: white;
+    text-align: center;
 }
