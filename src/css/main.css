@@ -1,0 +1,141 @@
+/* Tar bort all margin och padding samt sätter box-sizing */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Sätter storlek på typsnitt i roten */
+html {
+    font-size: 62.5%;
+    height: 100%;
+}
+
+/* Typsnitt, storlek och bakgrundfärg för allt inom bodyn */
+body {
+    font-size: 1.6rem;
+    line-height: 2.6rem;
+    font-family: 'Roboto', Helvetica, Arial, sans-serif;
+    font-weight: 400;
+    background-color: #d2e4db;
+    color: #333;
+    height: 100%;
+}
+
+/* Styling för rubriker */
+h1 {
+    font-size: 3rem;
+    font-family: "Montserrat", 'Roboto', Helvetica, sans-serif;
+    color: black;
+    font-weight: 700;
+    text-align: center;
+    margin: 4rem 0 0 0;
+    letter-spacing: 0.5rem;
+    line-height: 4rem;
+}
+
+h2 {
+    font-size: 2.6rem;
+    font-family: "Montserrat", 'Roboto', Helvetica, sans-serif;
+    color: rgb(3, 29, 1);
+    font-weight: 600;
+    letter-spacing: 0.2rem;
+    text-align: center;
+    margin: 4rem 0 2rem 0;
+    line-height: 3.6rem;
+}
+
+h3 {
+    font-size: 2.4rem;
+    font-family: "Montserrat", 'Roboto', Helvetica, sans-serif;
+    color: black;
+    font-weight: 600;
+    letter-spacing: 0.2rem;
+    margin: 4rem 0 0 0;
+    line-height: 3.4rem;
+}
+
+h4 {
+    font-size: 2rem;
+    font-family: "Montserrat", 'Roboto', Helvetica, sans-serif;
+    color: black;
+    font-weight: 600;
+    letter-spacing: 0.2rem;
+    margin: 4rem 0 0 0;
+    line-height: 3rem;
+}
+
+/* Styling och position för header */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+    padding: 1rem 0 0 0;
+    display: flex;
+    justify-content: space-evenly;
+    background-color: #add8c2;
+}
+
+/* Tar bort marginal för huvudrubrik i header */
+header h1 {
+    margin: 0;
+}
+
+/* Styling och position för nav */
+nav {
+    position: fixed;
+    top: 6.8rem;
+    left: 0;
+    width: 100%;
+    height: auto;
+    padding: 1rem 0;
+    display: flex;
+    justify-content: center;
+    background-color: rgb(7, 37, 7);
+}
+
+/* Styling för navigeringslista */
+nav ul {
+    display: flex;
+}
+
+nav li {
+    list-style-type: none;
+    padding: 0 2rem;
+    margin: 0 5rem;
+}
+
+nav li a {
+    color: white;
+    text-decoration: none;
+    font-family: "Montserrat", 'Roboto', Helvetica, sans-serif;
+}
+
+nav a:hover {
+text-decoration: underline;
+}
+
+/* Styling för main-container */
+main {
+    margin: 155px auto 0 auto;
+    width: 80%;
+    max-width: 1200px;
+    min-height: 100vh;
+}
+
+/* Margin för paragrafer i sektioner */
+section p {
+    margin: 1.2rem 0;
+}
+
+/* Styling och position för footer */
+footer {
+    width: 100%;
+    height: auto;
+    padding: 1rem;
+    background-color: rgb(7, 37, 7);
+    color: white;
+    text-align: center;
+}
