@@ -7,6 +7,6 @@
         "nearLossless": true
     },
     "avif": {
-        "lossless": true
+        "quality": 70
     }
 }
