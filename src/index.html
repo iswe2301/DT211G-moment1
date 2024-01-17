@@ -16,18 +16,38 @@
 </head>
 
 <body>
+    <div></div>
     <header>
-        <a href="index.html">
-            <img src="images/logo.svg" alt="Logotyp"></a>
-        <h1>Exempelwebbplats</h1>
-        <nav>
+        <div id="logo">
+            <a href="index.html">
+                <img src="images/logo.svg" alt="Logotyp">
+            </a>
+            <h1>ISA WESTLING</h1>
+        </div>
+        <nav id="computernav">
             <ul>
-                <li><a href="index.html">START</a></li>
+                <li><a class="active" href="index.html">START</a></li>
                 <li><a href="images.html">BILDER</a></li>
                 <li><a href="process.html">ARBETSPROCESS</a></li>
             </ul>
         </nav>
+        <!-- Hamburgermeny för mobil -->
+        <button class="menubtn" aria-label="Huvudmeny">
+            <span class="menuicon">
+                <span id="line1"></span>
+                <span id="line2"></span>
+                <span id="line3"></span>
+            </span>
+        </button>
     </header>
+
+    <nav id="mobilenav">
+        <ul>
+            <li><a class="active" href="index.html">START</a></li>
+            <li><a href="images.html">BILDER</a></li>
+            <li><a href="process.html">ARBETSPROCESS</a></li>
+        </ul>
+    </nav>
 
     <main>
         <section>
