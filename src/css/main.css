@@ -155,6 +155,65 @@ section p {
     display: none;
 }
 
+/* Visar sök som flex column */
+#search-box {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 4rem;
+    padding: 0 1rem;
+}
+
+/* Typsnitt till placeholder i input */
+input {
+    height: 3rem;
+    font-family: 'Roboto', Helvetica, Arial, sans-serif;
+    font-size: 1.4rem;
+    padding: 0 1rem;
+    margin-top: 0.5rem;
+}
+
+/* Label storlek och fetstil */
+label {
+    font-size: 1.8rem;
+    font-weight: 600;
+}
+
+/* Responsiv sektion med maxbredd */
+#scheduele {
+    width: 100%;
+    max-width: 75ch;
+}
+
+/* Responsiv tabell */
+table {
+    width: 100%;
+}
+
+/* Understrukna tabellrubriker, större storlek */
+table th {
+    font-size: 1.8rem;
+    text-decoration: underline;
+    padding-bottom: 0.5rem;
+}
+
+/* Centrerar text i tabelldata */
+table td {
+    padding: 1rem 0;
+    text-align: center;
+}
+
+/* Vänxterställer text för tabellhuvudet namn */
+thead #name {
+    padding: 0 4rem 0.5rem 4rem;
+    text-align: left;
+}
+
+/* Vänsterställer texten för alla td för kursnamn */
+.coursename {
+    text-align: left !important;
+    padding: 1rem 4rem;
+}
+
 /* Styling och position för footer */
 footer {
     width: 100%;
@@ -295,6 +354,19 @@ footer {
 
     #logo img {
         max-width: 30px;
+    }
+
+    thead #name {
+        padding: 0 0 0.5rem 2rem;
+    }
+
+    /* Vänsterställer texten för alla td för kursnamn */
+    .coursename {
+        padding: 0 0 1rem 2rem;
+    }
+
+    #search-box {
+        padding: 0;
     }
 
 }
