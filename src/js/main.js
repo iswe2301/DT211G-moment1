@@ -5,13 +5,17 @@ const menuBtnEl = document.querySelector(".menubtn");
 const containerEl = document.querySelector("div");
 const tableEl = document.getElementById("course-table");
 const tableBodyEl = document.getElementById("table-body");
-const tableHeadEl = document.querySelectorAll("th")
+const tableHeadEl = document.querySelectorAll("th");
+const searchEl = document.getElementById("search");
 // Sätter sorteringsordningen till stigande som standard
 let isAscending = true;
 
 // Händelselyssnare vid klick somm anropar funktioner
 menuBtnEl.addEventListener("click", transformMenu);
 menuBtnEl.addEventListener("click", dropDownMenu);
+
+// Händelselyssnare som vid input i sökfältet anropar funktion m. argument (värdet från sök-input)
+searchEl.addEventListener("input", searchCourses)
 
 // Funktion för att växla mellan klassen cross samt opacity vid klick.
 // Hämtar element genom class.
@@ -59,9 +63,9 @@ async function displayData() {
         data.forEach(data => {
             tableBodyEl.innerHTML += `<tr><td>${data.code}</td><td>${data.coursename}</td><td>${data.progression}</td></tr>`;
         });
-        // Lägger till klickhändelse till varje tabellhuvud, anropar funktion vid klick med argument "id".
-        tableHeadEl.forEach(th => {
-            th.addEventListener("click", () => sortTable(th.id));
+        // Lägger till klickhändelse till varje tabellhuvud, anropar funktion vid klick med tabellhuvudets index som argument.
+        tableHeadEl.forEach((th, index) => {
+            th.addEventListener("click", () => sortTable(index));
         });
         // Fångar upp felmeddelande
     } catch (error) {
@@ -74,28 +78,26 @@ async function displayData() {
 // Anropar funktion för att visa data
 displayData();
 
-// Funktion för att sortera tabellen baserat på den valda kolumnen, argument genom id från th
-function sortTable(id) {
+// Funktion för att sortera tabellen baserat på den valda kolumnen, argument genom index från th
+function sortTable(index) {
+
     // Hämtar alla rader från tabellen och skapar ny array
     const rows = Array.from(tableBodyEl.querySelectorAll("tr"));
 
-    // Hämtar index för den kolumn som matchar id
-    const columnIndex = ["code", "name", "progression"].indexOf(id);
-
     // Sorterar raderna baserat på textinnehållet i den valda kolumnen
-    rows.sort((rowA, rowB) => {
-        // Hämtar textinnehållet från den aktuella cellen i den valda kolumnen för första raden
-        const valueA = rowA.cells[columnIndex].textContent;
-        // Hämtar textinnehållet från den aktuella cellen i den valda kolumnen för andra raden
-        const valueB = rowB.cells[columnIndex].textContent;
+    rows.sort((a, b) => {
+        // Hämtar textinnehållet från den aktuella cellen i den valda kolumnen (index) för första raden
+        const firstRow = a.cells[index].textContent;
+        // Hämtar textinnehållet från den aktuella cellen i den valda kolumnen (index) för andra raden
+        const secondRow = b.cells[index].textContent;
 
         // Jämför textinnehållet med localCompare och returnerar resultatet beroende på aktuell sortering
         if (isAscending) {
             // Om isAscending är true, returneras resultatet av jämförelsen mellan valueA och valueB
-            return valueA.localeCompare(valueB);
+            return firstRow.localeCompare(secondRow);
             // Om isAscending är false, returneras resultatet av jämförelsen mellan valueB och valueA
         } else {
-            return valueB.localeCompare(valueA);
+            return secondRow.localeCompare(firstRow);
         }
     });
 
@@ -111,3 +113,25 @@ function sortTable(id) {
     isAscending = !isAscending;
 }
 
+// Asynkron funktion för att söka och filtrera tabellen
+async function searchCourses() {
+    // Hämtar värdet från input-fältet, gör om allt till små bokstäver
+    const searchWords = searchEl.value.toLowerCase();
+
+    // Inväntar att data har hämtats från getData-funktionen
+    const data = await getData();
+
+    // Filtrerar kurser baserat på värdet i input (sökord), skapar ny array med filtrerade kurser
+    const filteredCourses = data.filter(course =>
+        // Kontrollerar om sökningen matchar kurskoden eller kursnamnet för varje kurs
+        course.code.toLowerCase().includes(searchWords) || course.coursename.toLowerCase().includes(searchWords)
+    );
+
+    // Rensar befintliga rader i tabellen
+    tableBodyEl.innerHTML = "";
+
+    // Skapar nya rader för varje filtrerad kurs och lägger till i tabellen
+    filteredCourses.forEach(course => {
+        tableBodyEl.innerHTML += `<tr><td>${course.code}</td><td>${course.coursename}</td><td>${course.progression}</td></tr>`;
+    });
+}
