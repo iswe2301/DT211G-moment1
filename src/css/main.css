@@ -198,6 +198,7 @@ table th {
     font-size: 1.8rem;
     text-decoration: underline;
     padding-bottom: 0.5rem;
+    cursor: pointer;
 }
 
 /* Centrerar text i tabelldata */
