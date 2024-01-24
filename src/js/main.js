@@ -61,7 +61,7 @@ async function displayData() {
         const data = await getData();
         // Loopar igenom varje dataobjekt och skriver ut till DOM
         data.forEach(data => {
-            tableBodyEl.innerHTML += `<tr><td>${data.code}</td><td>${data.coursename}</td><td>${data.progression}</td></tr>`;
+            tableBodyEl.innerHTML += `<tr><td>${data.code}</td><td class="coursename">${data.coursename}</td><td>${data.progression}</td></tr>`;
         });
         // Lägger till klickhändelse till varje tabellhuvud, anropar funktion vid klick med tabellhuvudets index som argument.
         tableHeadEl.forEach((th, index) => {
@@ -132,6 +132,6 @@ async function searchCourses() {
 
     // Skapar nya rader för varje filtrerad kurs och lägger till i tabellen
     filteredCourses.forEach(course => {
-        tableBodyEl.innerHTML += `<tr><td>${course.code}</td><td>${course.coursename}</td><td>${course.progression}</td></tr>`;
+        tableBodyEl.innerHTML += `<tr><td>${course.code}</td><td class="coursename">${course.coursename}</td><td>${course.progression}</td></tr>`;
     });
 }
