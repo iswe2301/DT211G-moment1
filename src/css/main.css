@@ -85,6 +85,7 @@ header {
 /* Tar bort marginal för huvudrubrik i header */
 header h1 {
     margin: 0 0 0 2rem;
+    font-size: 2.8rem;
     color: white;
 }
 
@@ -100,13 +101,13 @@ nav ul {
 
 nav li {
     list-style-type: none;
-    padding: 0 2rem;
-    margin: 0 5rem;
+    padding: 0 1rem;
+    margin: 0 1rem;
 }
 
 nav li a {
     color: white;
-    font-size: 2rem;
+    font-size: 1.8rem;
     text-decoration: none;
     font-family: "Montserrat", 'Roboto', Helvetica, sans-serif;
     letter-spacing: 0.2rem;
@@ -165,11 +166,13 @@ section p {
 
 /* Typsnitt till placeholder i input */
 input {
-    height: 3rem;
+    height: 4rem;
     font-family: 'Roboto', Helvetica, Arial, sans-serif;
-    font-size: 1.4rem;
+    font-size: 1.6rem;
     padding: 0 1rem;
-    margin-top: 0.5rem;
+    margin-top: 1rem;
+    border: 1px solid #6e917f;
+    border-radius: 5px;
 }
 
 /* Label storlek och fetstil */
@@ -187,6 +190,7 @@ label {
 /* Responsiv tabell */
 table {
     width: 100%;
+    border-collapse: collapse;
 }
 
 /* Understrukna tabellrubriker, större storlek */
@@ -200,6 +204,7 @@ table th {
 table td {
     padding: 1rem 0;
     text-align: center;
+    border-bottom: 1px solid #a0c7b3;
 }
 
 /* Vänxterställer text för tabellhuvudet namn */
@@ -223,15 +228,6 @@ footer {
     background-color: rgb(7, 37, 7);
     color: white;
     text-align: center;
-}
-
-/* Styling för skärmar mindre än 1200px */
-@media screen and (max-width: 1200px) {
-
-    nav li {
-        padding: 0 2rem;
-        margin: 0 2rem;
-    }
 }
 
 /* Styling för skärmar mindre än 1024px */
@@ -362,7 +358,7 @@ footer {
 
     /* Vänsterställer texten för alla td för kursnamn */
     .coursename {
-        padding: 0 0 1rem 2rem;
+        padding: 1rem 0 1rem 2rem;
     }
 
     #search-box {
