@@ -8,7 +8,7 @@ const tableBodyEl = document.getElementById("table-body");
 const tableHeadEl = document.querySelectorAll("th");
 const searchEl = document.getElementById("search");
 // Sätter sorteringsordningen till stigande som standard
-let isAscending = true;
+let sortOrder = true;
 
 // Händelselyssnare vid klick somm anropar funktioner
 menuBtnEl.addEventListener("click", transformMenu);
@@ -91,13 +91,13 @@ function sortTable(index) {
         // Hämtar textinnehållet från den aktuella cellen i den valda kolumnen (index) för andra raden
         const secondRow = b.cells[index].textContent;
 
-        // Jämför textinnehållet med localCompare och returnerar resultatet beroende på aktuell sortering
-        if (isAscending) {
-            // Om isAscending är true, returneras resultatet av jämförelsen mellan valueA och valueB
-            return firstRow.localeCompare(secondRow);
-            // Om isAscending är false, returneras resultatet av jämförelsen mellan valueB och valueA
+        // Jämför radernas innehåll och returnerar beroende på aktuell sorteringsordning
+        if (sortOrder) {
+            // Om sortOrder är true (stigande ordning), returneras 1 om första raden är större än andra, annars returneras -1
+            return (firstRow > secondRow) ? 1 : -1;
+            // Om sortOrder är false (fallande ordning), returneras 1 om andra raden är större än första, annars returneras -1
         } else {
-            return secondRow.localeCompare(firstRow);
+            return (secondRow > firstRow) ? 1 : -1;
         }
     });
 
@@ -110,7 +110,7 @@ function sortTable(index) {
     });
 
     // Byter sorteringordning för nästa klick (fallande)
-    isAscending = !isAscending;
+    sortOrder = !sortOrder;
 }
 
 // Asynkron funktion för att söka och filtrera tabellen
@@ -119,13 +119,13 @@ async function searchCourses() {
     const searchWords = searchEl.value.toLowerCase();
 
     // Inväntar att data har hämtats från getData-funktionen
-    const data = await getData();
+    const courses = await getData();
 
     // Filtrerar kurser baserat på värdet i input (sökord), skapar ny array med filtrerade kurser
-    const filteredCourses = data.filter(course =>
+    const filteredCourses = courses.filter((course) => {
         // Kontrollerar om sökningen matchar kurskoden eller kursnamnet för varje kurs
-        course.code.toLowerCase().includes(searchWords) || course.coursename.toLowerCase().includes(searchWords)
-    );
+        return course.code.toLowerCase().includes(searchWords) || course.coursename.toLowerCase().includes(searchWords)
+    });
 
     // Rensar befintliga rader i tabellen
     tableBodyEl.innerHTML = "";
